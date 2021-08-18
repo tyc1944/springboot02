@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--导入thymeleaf的名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <base th:href="${#httpServletRequest.getContextPath()+'/'}">
+    <link type="text/css" th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<form  name="addForm" method="post" action="/listadd6">
+    <div class="form-group">
+        <label for="stuno">学号：</label>
+        <input type="text" class="form-control" id="stuno" placeholder="学号" name="stuno">
+    </div>
+    <div class="form-group">
+        <label for="stuname"> 姓名：</label>
+        <input type="text" class="form-control" id="stuname" placeholder="姓名" name="stuname">
+    </div>
+    <label class="radio-inline">
+            <input type="radio" name="stusex" id="stusex1" value="男" checked>
+            男
+        </label>
+
+        <label class="radio-inline">
+            <input type="radio" name="stusex" id="stusex2" value="女">
+            女
+        </label>
+
+    <div class="form-group">
+        <label for="stuage">年龄：</label>
+        <input type="text" class="form-control" id="stuage" placeholder="年龄" name="stuage">
+    </div>
+    <div class="form-group">
+        <label for="stuseat">座位：</label>
+        <input type="text" class="form-control" id="stuseat" placeholder="座位号" name="stuseat">
+    </div>
+    <div class="form-group">
+        <label for="stupid">身份证：</label>
+        <input type="text" class="form-control" id="stupid" placeholder="身份证" name="stupid">
+    </div>
+    <div class="form-group">
+        <label for="stuaddress">地址：</label>
+        <input type="text" class="form-control" id="stuaddress" placeholder="地址" name="stuaddress">
+    </div>
+<!--    学号：<input type="text" name="stuno"><br>-->
+<!--    姓名：<input type="text" name="stuname"><br>-->
+<!--    性别：<input type="radio" name="stusex" value="男">男&nbsp;<input type="radio" name="stusex" value="女">女&nbsp;<br>-->
+<!--    年龄：<input type="text" name="stuage"><br>-->
+<!--    座位：<input type="text" name="stuseat"><br>-->
+<!--    身份证：<input type="text" name="stupid"><br>-->
+<!--    地址：<input type="text" name="stuaddress"><br>-->
+    <input type="submit" value="添加"> <input type="submit" value="返回" onclick="history.back()"><br>
+
+
+</form>
+</body>
+</html>

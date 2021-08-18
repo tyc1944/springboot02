@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--导入thymeleaf的名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link type="text/css" th:href="@{bootstrap/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<a th:href="@{go/add}" class="btn btn-default">添加</a>
+<table border="1" class="table">
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+        <th>座位</th>
+        <th>身份证</th>
+        <th>地址</th>
+        <th>操作</th>
+    </tr>
+<!--    <c:forEach var="stuinfo" items="${stuinfoList}">-->
+        <tr th:each="stuinfo:${stuinfoList}">
+            <td th:text="${stuinfo.stuno}"></td>
+            <td th:text="${stuinfo.stuname}"></td>
+            <td th:text="${stuinfo.stusex}"></td>
+            <td th:text="${stuinfo.stuage}"></td>
+            <td th:text="${stuinfo.stuseat}"></td>
+            <td th:text="${stuinfo.stupid}"></td>
+            <td th:text="${stuinfo.stuaddress}"></td>
+            <td>
+<!--                (name='javaboy',age=99)-->
+                <a class="btn btn-primary" th:href="@{'/listtoUpdate6?stuno='+${stuinfo.stuno}}">编辑</a>&nbsp;
+                <a class="btn btn-info" th:href="@{'/listdelete6?stuno='+${stuinfo.stuno}}" onclick="return confirm('你确定删除吗')">删除</a>&nbsp;
+            </td>
+        </tr>
+<!--    </c:forEach>-->
+</table>
+
+<span th:if="${msg}" style="color:red" th:text="${msg}"></span>
+
+
+</body>
+</html>

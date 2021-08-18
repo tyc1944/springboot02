@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--导入thymeleaf的名称空间-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <base th:href="${#httpServletRequest.getContextPath()+'/'}">
+    <link type="text/css" th:href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+<h2>编辑</h2>
+<form name="addForm"  th:action="@{/listupdate6}">
+    <div class="form-group">
+        <label for="stuno">学号：</label>
+        <input type="text" class="form-control" id="stuno" placeholder="学号" name="stuno" th:value="${stuinfo.stuno}">
+    </div>
+    <div class="form-group">
+        <label for="stuname"> 姓名：</label>
+        <input type="text" class="form-control" id="stuname" placeholder="姓名" name="stuname" th:value="${stuinfo.stuname}">
+    </div>
+    <label class="radio-inline">
+        <input th:if="${stuinfo.stusex!='男'}" type="radio" name="stusex" id="stusex1" value="男">
+        <input th:if="${stuinfo.stusex=='男'}" type="radio" name="stusex" id="stusex2" value="男" checked>
+        男
+    </label>
+
+    <label class="radio-inline">
+        <input th:if="${stuinfo.stusex!='女'}" type="radio" name="stusex" id="stusex3" value="女">
+        <input th:if="${stuinfo.stusex=='女'}" type="radio" name="stusex" id="stusex4" value="女" checked>
+        女
+    </label>
+
+    <div class="form-group">
+        <label for="stuage">年龄：</label>
+        <input type="text" class="form-control" id="stuage" placeholder="年龄" name="stuage" th:value="${stuinfo.stuage}">
+    </div>
+    <div class="form-group">
+        <label for="stuseat">座位：</label>
+        <input type="text" class="form-control" id="stuseat" placeholder="座位号" name="stuseat" th:value="${stuinfo.stuseat}">
+    </div>
+    <div class="form-group">
+        <label for="stupid">身份证：</label>
+        <input type="text" class="form-control" id="stupid" placeholder="身份证" name="stupid" th:value="${stuinfo.stupid}">
+    </div>
+    <div class="form-group">
+        <label for="stuaddress">地址：</label>
+        <input type="text" class="form-control" id="stuaddress" placeholder="地址" name="stuaddress" th:value="${stuinfo.stuaddress}">
+    </div>
+<!--    学号：<input type="text" name="stuno" th:value="${stuinfo.stuno}"><br>-->
+<!--    姓名：<input type="text" name="stuname" th:value="${stuinfo.stuname}"><br>-->
+<!--    性别：-->
+<!--    <input th:if="${stuinfo.stusex!='男'}" type="radio" name="stusex" th:value="男"}>-->
+<!--    <input th:if="${stuinfo.stusex=='男'}" type="radio" name="stusex" th:value="男"} checked>男-->
+<!--    <input th:if="${stuinfo.stusex!='女'}" type="radio" name="stusex" th:value="女"}>-->
+<!--    <input th:if="${stuinfo.stusex=='女'}" type="radio" name="stusex" th:value="女" checked}>女<br>-->
+<!--    年龄：<input type="text" name="stuage" th:value="${stuinfo.stuage}"><br>-->
+<!--    座位：<input type="text" name="stuseat" th:value="${stuinfo.stuseat}"><br>-->
+<!--    身份证：<input type="text" name="stupid" th:value="${stuinfo.stupid}"><br>-->
+<!--    地址：<input type="text" name="stuaddress"th:value="${stuinfo.stuaddress}"><br>-->
+    <input type="submit" value="修改"> <input type="submit" value="返回" onclick="history.back()"><br>
+
+
+</form>
+</body>
+</html>
